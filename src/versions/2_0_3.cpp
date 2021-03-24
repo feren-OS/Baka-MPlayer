@@ -54,7 +54,7 @@ void BakaEngine::Load2_0_3()
 {
     QJsonObject root = settings->getRoot();
     window->setOnTop(QJsonValueRef2(root["onTop"]).toString("never"));
-    window->setAutoFit(QJsonValueRef2(root["autoFit"]).toInt(100));
+    window->setAutoFit(QJsonValueRef2(root["autoFit"]).toInt(0));
     sysTrayIcon->setVisible(QJsonValueRef2(root["trayIcon"]).toBool(false));
     window->setHidePopup(QJsonValueRef2(root["hidePopup"]).toBool(false));
     window->setRemaining(QJsonValueRef2(root["remaining"]).toBool(true));
@@ -71,7 +71,7 @@ void BakaEngine::Load2_0_3()
     }
     window->setMaxRecent(QJsonValueRef2(root["maxRecent"]).toInt(5));
     window->setGestures(QJsonValueRef2(root["gestures"]).toBool(true));
-    window->setResume(QJsonValueRef2(root["resume"]).toBool(true));
+    window->setResume(QJsonValueRef2(root["resume"]).toBool(false));
     window->setHideAllControls(QJsonValueRef2(root["hideAllControls"]).toBool(false));
     window->setLang(QJsonValueRef2(root["lang"]).toString("auto"));
 #if defined(Q_OS_WIN)
