@@ -20,10 +20,6 @@ MainWindow::MainWindow(QWidget *parent):
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-#if defined(Q_OS_UNIX) || defined(Q_OS_LINUX)
-    // update streaming support disabled on unix platforms
-    ui->actionUpdate_Streaming_Support->setEnabled(false);
-#endif
     ShowPlaylist(false);
     addActions(ui->menubar->actions()); // makes menubar shortcuts work even when menubar is hidden
 
@@ -92,10 +88,6 @@ MainWindow::MainWindow(QWidget *parent):
         {"speed 1.0", ui->action_Reset},
         {"output", ui->actionShow_D_ebug_Output},
         {"preferences", ui->action_Preferences},
-        {"online_help", ui->actionOnline_Help},
-        {"update", ui->action_Check_for_Updates},
-        {"update youtube-dl", ui->actionUpdate_Streaming_Support},
-        {"about qt", ui->actionAbout_Qt},
         {"about", ui->actionAbout_Baka_MPlayer}
     };
 
@@ -380,7 +372,8 @@ MainWindow::MainWindow(QWidget *parent):
                     {
                         // if we were hiding album art, show it--we've gone to a video
                         if(ui->mpvFrame->styleSheet() != QString()) // remove filler album art
-                            ui->mpvFrame->setStyleSheet("");
+                            ui->mpvFrame->setStyleSheet("background:black;");
+                            
                         if(ui->action_Hide_Album_Art->isChecked())
                             HideAlbumArt(false);
                         ui->action_Hide_Album_Art->setEnabled(false);
@@ -489,10 +482,6 @@ MainWindow::MainWindow(QWidget *parent):
             {
                 switch(playState)
                 {
-                case Mpv::Loaded:
-                    baka->mpv->ShowText("Loading...", 0);
-                    break;
-
                 case Mpv::Started:
                     if(!init) // will only happen the first time a file is loaded.
                     {
@@ -543,7 +532,8 @@ MainWindow::MainWindow(QWidget *parent):
                                 ui->seekBar->setTracking(0);
                                 ui->actionStop_after_Current->setChecked(false);
                                 if(ui->mpvFrame->styleSheet() != QString()) // remove filler album art
-                                    ui->mpvFrame->setStyleSheet("");
+                                    ui->mpvFrame->setStyleSheet("background:black;");
+                                mpv->ShowText(QString(), 0); // hide message
                             }
                         }
                         else

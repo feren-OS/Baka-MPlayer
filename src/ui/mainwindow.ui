@@ -1235,21 +1235,6 @@
     <string>&amp;Dim Lights</string>
    </property>
   </action>
-  <action name="actionOnline_Help">
-   <property name="text">
-    <string>Online &amp;Help</string>
-   </property>
-  </action>
-  <action name="action_Check_for_Updates">
-   <property name="text">
-    <string>&amp;Check for Updates</string>
-   </property>
-  </action>
-  <action name="actionAbout_Qt">
-   <property name="text">
-    <string>About &amp;Qt</string>
-   </property>
-  </action>
   <action name="actionAbout_Baka_MPlayer">
    <property name="text">
     <string>About &amp;Baka MPlayer</string>
@@ -1433,11 +1418,6 @@
   <action name="action150">
    <property name="text">
     <string>15&amp;0%</string>
-   </property>
-  </action>
-  <action name="actionUpdate_Streaming_Support">
-   <property name="text">
-    <string>Update &amp;Streaming Support</string>
    </property>
   </action>
   <action name="action_Mute">
