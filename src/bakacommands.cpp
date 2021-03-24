@@ -15,12 +15,10 @@
 #include "ui/locationdialog.h"
 #include "ui/jumpdialog.h"
 #include "ui/preferencesdialog.h"
-#include "ui/updatedialog.h"
 #include "ui/screenshotdialog.h"
 #include "widgets/dimdialog.h"
 #include "mpvhandler.h"
 #include "overlayhandler.h"
-#include "updatemanager.h"
 #include "util.h"
 
 
@@ -348,31 +346,6 @@ void BakaEngine::BakaPreferences(QStringList &args)
         InvalidParameter(args.join(' '));
 }
 
-void BakaEngine::BakaOnlineHelp(QStringList &args)
-{
-    if(args.empty())
-        QDesktopServices::openUrl(QUrl(tr("http://bakamplayer.u8sand.net/help.php")));
-    else
-        InvalidParameter(args.join(' '));
-}
-
-void BakaEngine::BakaUpdate(QStringList &args)
-{
-    if(args.empty())
-        UpdateDialog::CheckForUpdates(this, window);
-    else
-    {
-#if defined(Q_OS_WIN)
-        QString arg = args.front();
-        args.pop_front();
-        if(arg == "youtube-dl")
-            QProcess::startDetached("youtube-dl.exe", {"--update"});
-        else
-#endif
-            InvalidParameter(args.join(' '));
-    }
-}
-
 void BakaEngine::BakaOpen(QStringList &args)
 {
     if(args.empty())
@@ -697,8 +670,6 @@ void BakaEngine::About(QString what)
 {
     if(what == QString())
         AboutDialog::about(BAKA_MPLAYER_VERSION, window);
-    else if(what == "qt")
-        qApp->aboutQt();
     else
         InvalidParameter(what);
 }

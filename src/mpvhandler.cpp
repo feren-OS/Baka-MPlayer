@@ -317,12 +317,19 @@ QString MpvHandler::LoadPlaylist(QString f)
         else if(fi.isDir()) // if directory
         {
             setPath(QDir::toNativeSeparators(fi.absoluteFilePath()+"/")); // set new path
-            return PopulatePlaylist();
+            return PopulatePlaylist(true);
         }
         else if(fi.isFile()) // if file
         {
             setPath(QDir::toNativeSeparators(fi.absolutePath()+"/")); // set new path
-            PopulatePlaylist();
+            
+            
+            QStringList playlist;
+            
+            playlist.push_back(fi.fileName()); // add file to the list
+            setPlaylist(playlist);
+            
+            
             return fi.fileName();
         }
     }
@@ -887,7 +894,7 @@ void MpvHandler::OpenFile(QString f)
     Command(args);
 }
 
-QString MpvHandler::PopulatePlaylist()
+QString MpvHandler::PopulatePlaylist(bool populatefolder)
 {
     if(path != "")
     {
@@ -896,9 +903,10 @@ QString MpvHandler::PopulatePlaylist()
         QStringList filter = Mpv::media_filetypes;
         if(path != QString() && file != QString())
             filter.append(QString("*.%1").arg(file.split(".").last()));
+    
         QFileInfoList flist;
         flist = root.entryInfoList(filter, QDir::Files);
-        for(auto &i : flist)
+        for(auto &i : flist) {
             playlist.push_back(i.fileName()); // add files to the list
         setPlaylist(playlist);
         if(playlist.empty())

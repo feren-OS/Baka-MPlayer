@@ -1022,11 +1022,6 @@
     <property name="title">
      <string>&amp;Help</string>
     </property>
-    <addaction name="actionOnline_Help"/>
-    <addaction name="action_Check_for_Updates"/>
-    <addaction name="actionUpdate_Streaming_Support"/>
-    <addaction name="separator"/>
-    <addaction name="actionAbout_Qt"/>
     <addaction name="actionAbout_Baka_MPlayer"/>
    </widget>
    <addaction name="menu_File"/>

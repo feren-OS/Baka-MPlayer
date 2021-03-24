@@ -29,7 +29,6 @@ public:
     Settings       *settings;
     GestureHandler *gesture;
     OverlayHandler *overlay;
-    UpdateManager  *update;
     DimDialog      *dimDialog;
 
     QSystemTrayIcon *sysTrayIcon;
@@ -267,24 +266,6 @@ private:
           }
          }
         },
-        {"online_help",
-         {&BakaEngine::BakaOnlineHelp,
-          {
-           QString(),
-           tr("launches online help"),
-           QString()
-          }
-         }
-        },
-        {"update",
-         {&BakaEngine::BakaUpdate,
-          {
-           QString(),
-           tr("opens the update dialog or updates youtube-dl"),
-           QString()
-          }
-         }
-        },
         {"open",
          {&BakaEngine::BakaOpen,
           {
@@ -447,8 +428,6 @@ private:
     void BakaDim(QStringList&);
     void BakaOutput(QStringList&);
     void BakaPreferences(QStringList&);
-    void BakaOnlineHelp(QStringList&);
-    void BakaUpdate(QStringList&);
     void BakaOpen(QStringList&);
     void BakaPlayPause(QStringList&);
     void BakaFitWindow(QStringList&);

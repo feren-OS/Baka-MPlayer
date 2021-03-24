@@ -114,7 +114,7 @@ public slots:
 
 protected slots:
     void OpenFile(QString);
-    QString PopulatePlaylist();
+    QString PopulatePlaylist(bool populatefolder);
     void LoadFileInfo();
     void SetProperties();
 

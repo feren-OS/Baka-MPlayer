@@ -150,7 +150,6 @@ SOURCES += main.cpp\
     bakaengine.cpp \
     bakacommands.cpp \
     mpvhandler.cpp \
-    updatemanager.cpp \
     gesturehandler.cpp \
     overlayhandler.cpp \
     util.cpp \
@@ -172,7 +171,6 @@ SOURCES += main.cpp\
     ui/mainwindow.cpp \
     ui/preferencesdialog.cpp \
     ui/screenshotdialog.cpp \
-    ui/updatedialog.cpp \
     ui/keydialog.cpp \
     overlay.cpp
 
@@ -180,7 +178,6 @@ HEADERS  += \
     bakaengine.h \
     mpvhandler.h \
     mpvtypes.h \
-    updatemanager.h \
     gesturehandler.h \
     overlayhandler.h \
     overlay.h \
@@ -202,7 +199,6 @@ HEADERS  += \
     ui/mainwindow.h \
     ui/preferencesdialog.h \
     ui/screenshotdialog.h \
-    ui/updatedialog.h \
     ui/keydialog.h \
     recent.h
 
@@ -214,5 +210,4 @@ FORMS    += \
     ui/mainwindow.ui \
     ui/preferencesdialog.ui \
     ui/screenshotdialog.ui \
-    ui/updatedialog.ui \
     ui/keydialog.ui
