@@ -23,153 +23,6 @@
    <iconset resource="../rsclist.qrc">
     <normaloff>:/img/logo.ico</normaloff>:/img/logo.ico</iconset>
   </property>
-  <property name="styleSheet">
-   <string notr="true">QWidget {
-	font-family: &quot;Noto Sans&quot;, &quot;FreeSans&quot;;
-	background: #1A1A1A;
-	color: whitesmoke;
-}
-
-/* QMenuBar and stuff */
-
-QMenuBar,
-QMenuBar::item {
-	background: #1A1A1A;
-}
-QMenuBar::item:selected {
-	background: #383838;
-}
-
-QMenu {
-	background: #1A1A1A;
-    border: 1px solid #383838;
-}
-QMenu::item:selected {
-	background: #383838;
- }
-QMenu::item:checked {
-	/* distinguish check state for menu item's with images here */
-}
-QMenu::item::disabled {
-	color: #6F6F6F;
-}
-/* QMenu::item::disabled:selected { } */
-QMenu::separator {
-	background: #383838;
-	height: 1px;
-	margin: 2px 0;
-}
-
-/* QSplitter */
-
-QSplitter::handle,
-#mpvFrame,
-#outputTextEdit,
-#inputLineEdit {
-	background: black;
-}
-
-#outputTextEdit {
-	font: 12px &quot;Courier New&quot;, monospace;
-	border-top: 1px solid #383838;
-}
-
-#inputLineEdit {
-	font: 12px &quot;Courier New&quot;,monospace;
-	border-top: 1px solid #383838;
-	padding: 2px;
-}
-#inputLineEdit:focus {
-	border-color: #008098;
-}
-
-/* Playlist group */
-
-#searchBox {
-	background: #383838;
-	border: 1px solid #383838;
-	font-size: 12px;
-	padding: 4px 2px;
-}
-#searchBox:focus {
-	border-color: #008098;
-}
-
-/* time labels */
-#durationLabel {
-	font-size: 12px;
-}
-#seperatorLabel,
-#remainingLabel {
-	color: gray;
-	font-size: 12px;
-}
-
-/* playlistWidget */
-
-QListView {
-	outline: none;
-}
-#playlistWidget::item {
-	background: #1A1A1A;
-	padding: 4px 2px;
-}
-#playlistWidget::item:selected {
-	background: #383838;
-}
-#playlistWidget:item:selected:active,
-#playlistWidget:item:selected:!active {
-	color: whitesmoke;
-}
-
-/* QScrollBar */
-
-QScrollBar:vertical {
-	padding-left: 1px;
-	width: 6px;
-}
-QScrollBar::handle:vertical {
-	background: #008098;
-	border-radius: 2px;
-	min-height: 10px;
-}
-QScrollBar::add-line:vertical,
-QScrollBar::sub-line:vertical {
-	border: none;
-}
-QScrollBar::add-page:vertical,
-QScrollBar::sub-page:vertical  {
-	background: #383838;
-	margin: 0 2px;
-}
-QScrollBar::up-arrow:vertical,
-QScrollBar::down-arrow:vertical {
-	background: transparent;
-}
-
-QScrollBar:horizontal {
-	height: 6px;
-	padding-top: 1px;
-}
-QScrollBar::handle:horizontal {
-	background: #008098;
-	border-radius: 2px;
-	min-width: 10px;
-}
-QScrollBar::add-line:horizontal,
-QScrollBar::sub-line:horizontal {
-	border: none;
-}
-QScrollBar::add-page:horizontal,
-QScrollBar::sub-page:horizontal {
-	background: #383838;
-	margin: 2px 0;
-}
-QScrollBar::left-arrow:horizontal,
-QScrollBar::right-arrow:horizontal {
-	background: transparent;
-}</string>
-  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <property name="spacing">
@@ -203,6 +56,11 @@ QScrollBar::right-arrow:horizontal {
         <enum>Qt::Vertical</enum>
        </property>
        <widget class="QFrame" name="mpvFrame">
+        <property name="styleSheet">
+        <string notr="true">#mpvFrame {
+            background: black;
+        }</string>
+        </property>
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>0</horstretch>
@@ -339,19 +197,6 @@ QScrollBar::right-arrow:horizontal {
              <property name="toolTip">
               <string>Select the Current File</string>
              </property>
-             <property name="styleSheet">
-              <string notr="true">QPushButton {
-	padding: 2px;
-	margin: 1px;
-}
-QPushButton:flat {
-    border: none; /* no border for a flat push button */
-}
-QPushButton:flat:pressed {
-	background: #383838;
-	border-radius: 2px;
-}</string>
-             </property>
              <property name="icon">
               <iconset resource="../rsclist.qrc">
                <normaloff>:/img/select_current.svg</normaloff>:/img/select_current.svg</iconset>
@@ -423,19 +268,6 @@ QPushButton:flat:pressed {
              <property name="toolTip">
               <string>Refresh Playlist</string>
              </property>
-             <property name="styleSheet">
-              <string notr="true">QPushButton {
-	padding: 2px;
-	margin: 1px;
-}
-QPushButton:flat {
-    border: none; /* no border for a flat push button */
-}
-QPushButton:flat:pressed {
-	background: #383838;
-	border-radius: 2px;
-}</string>
-             </property>
              <property name="icon">
               <iconset resource="../rsclist.qrc">
                <normaloff>:/img/refresh_view.svg</normaloff>:/img/refresh_view.svg</iconset>
@@ -490,29 +322,6 @@ QPushButton:flat:pressed {
       </property>
       <property name="focusPolicy">
        <enum>Qt::NoFocus</enum>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QSlider {
-	height: 9px;
-}
-QSlider::handle:horizontal:disabled,
-QSlider::sub-page:horizontal:disabled {
-	background: #383838;
-}
-QSlider::handle:horizontal {
-	/* handle color */
-	background: #008098;
-	width: 9px;
-	border-radius: 4px;
-}
-QSlider::groove:horizontal {
-	/* the non-progressed color */
-	background: #383838;
-}
-QSlider::sub-page:horizontal {
-	/* the progress color */
-	background: #008098;
-}</string>
       </property>
       <property name="maximum">
        <number>1000000</number>
@@ -904,22 +713,6 @@ QSlider::sub-page:horizontal {
            </property>
            <property name="focusPolicy">
             <enum>Qt::NoFocus</enum>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QSlider::groove:horizontal {
-	background: #5A5A5A;
-	height: 1px;
-}
-QSlider::sub-page:horizontal {
-	background: #008098;
-}
-QSlider::handle:horizontal {
-	background: whitesmoke;
-	border: 2px solid #1A1A1A;
-	border-radius: 7px;
-	margin: -7px 0;
-	width: 12px;
-}</string>
            </property>
            <property name="maximum">
             <number>100</number>

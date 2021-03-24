@@ -13,63 +13,6 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true">QWidget {
-	font: 12px &quot;Noto Sans&quot;, &quot;FreeSans&quot;;
-	background: #1A1A1A;
-	color: whitesmoke;
-}
-
-#horizontalLayoutWidget {
-	background: #454A4D;
-	border: 1px solid black;
-	border-radius: 2px;
-}
-
-/* QSpinBox */
-
-QSpinBox {
-	background: #454A4D;
-}
-QSpinBox::disabled {
-	color: #6F6F6F;
-}
-QSpinBox::up-button, 
-QSpinBox::down-button {
-	border: none;
-	width: 10px;
-}
-QSpinBox::up-arrow {
-	background: url(:/img/up-arrow.svg);
-}
-QSpinBox::down-arrow {
-	background: url(:/img/down-arrow.svg);
-}
-
-/* QPushButton */
-
-QPushButton {
-	background: #454A4D;
-	border: 1px solid #000;
-	border-radius: 2px;
-	color: whitesmoke;
-	min-width: 76px;
-	min-height: 17px;
-	padding: 4px 6px;
-}
-QPushButton:focus {
-	border: 1px solid #008098;
-	outline: none;
-}
-QPushButton:pressed {
-	background: #2E3133;
-}
-QPushButton:disabled {
-	background: transparent;
-	border: 1px solid #454A4D;
-	color: #6F6F6F;
-}</string>
-  </property>
   <layout class="QHBoxLayout" name="horizontalLayout_2">
    <item>
     <widget class="QLabel" name="validEntryLabel">
@@ -120,11 +63,6 @@ QPushButton:disabled {
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel {
-	background: transparent;
-}</string>
-        </property>
         <property name="text">
          <string>:</string>
         </property>
@@ -150,11 +88,6 @@ QPushButton:disabled {
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel {
-	background: transparent;
-}</string>
         </property>
         <property name="text">
          <string>:</string>

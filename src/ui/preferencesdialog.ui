@@ -13,234 +13,9 @@
   <property name="windowTitle">
    <string>Preferences</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true">QWidget {
-	font: 12px &quot;Noto Sans&quot;, &quot;FreeSans&quot;;
-	background: #1A1A1A;
-	color: whitesmoke;
-}
-
-/* QHeaderView for QTableWidget has to be set here */
-
-QTableWidget QHeaderView::section {
-	padding: 4px 2px;
-	background: #454A4D;
-	border: 1px solid #212121;
-}
-
-/* QRadioButton */
-
-QRadioButton::indicator {
-	width: 6px;
-	height: 6px;
-	border-radius: 5px;
-	padding: 2px;
-}
-QRadioButton::indicator:unchecked {
-	border: 1px solid whitesmoke;
-	image: none;
-}
-QRadioButton::indicator:checked {
-	border: 1px solid #008098;
-	image: url(:/img/selected.svg);
-}
-
-/* QCheckBox */
-
-QCheckBox::indicator,
-QGroupBox::indicator{
-	width: 11px;
-	height: 11px;
-	border: 1px solid #008098;
-	border-radius: 2px;
-}
-QCheckBox::indicator:unchecked,
-QGroupBox::indicator:unchecked {
-	border: 1px solid whitesmoke;
-	background: #1A1A1A;
-	image: none;
-}
-QCheckBox::indicator:checked,
-QGroupBox::indicator:checked {
-	border: 1px solid #008098;
-	background: #008098;
-	image: url(:/img/checked.svg);
-}
-
-/* QComboBox */
-
-QComboBox {
-	background: #454A4D;
-	border: 1px solid #000;
-	border-radius: 2px;
-	padding: 2px;
-}
-QComboBox:focus {
-	border: 1px solid #008098;
-}
-QComboBox::drop-down {
-	background: #008098;
-	border-top-right-radius: 2px;
-	border-bottom-right-radius: 2px;
-}
-QComboBox::down-arrow {
-	image: url(:/img/down-arrow.svg);
-}
-
-/* QLineEdit */
-
-QLineEdit {
-	background: #000;
-	border: 1px solid #454A4D;
-	padding: 2px;
-}
-QLineEdit:focus {
-	border: 1px solid #008098;
-}
-
-/* QPushButton */
-
-QPushButton {
-	background: #454A4D;
-	border: 1px solid #000;
-	border-radius: 2px;
-	color: whitesmoke;
-	min-width: 76px;
-	min-height: 17px;
-	padding: 4px 6px;
-}
-QPushButton:focus {
-	border: 1px solid #008098;
-	outline: none;
-}
-QPushButton:pressed {
-	background: #2E3133;
-}
-QPushButton:disabled {
-	background: transparent;
-	border: 1px solid #454A4D;
-	color: #6F6F6F;
-}
-
-/* QSpinBox */
-
-QSpinBox {
-	background: #454A4D;
-	border: 1px solid #000;
-	border-radius: 2px;
-}
-QSpinBox:focus {
-	border: 1px solid #008098;
-}
-QSpinBox::disabled {
-	color: #6F6F6F;
-}
-QSpinBox::up-button,
-QSpinBox::down-button {
-	background: #008098;
-	border: none;
-	border-top-right-radius: 2px;
-	border-bottom-right-radius: 2px;
-	width: 10px;
-}
-QSpinBox::up-arrow {
-	background: url(:/img/up-arrow.svg);
-}
-QSpinBox::down-arrow {
-	background: url(:/img/down-arrow.svg);
-}
-
-/* QGroupBox */
-
-QGroupBox {
-	border: 1px solid #454A4D;
-	border-radius: 2px;
-	margin-top: 0.5em;
-}
-QGroupBox::title {
-	subcontrol-origin: margin;
-	subcontrol-position: top center;
-	background: #454A4D;
-	border: 1px solid #454A4D;
-	border-radius: 2px;
-	padding: 0 2px;
-}
-
-/* QScrollBar */
-
-QScrollBar:vertical {
-	padding-left: 1px;
-	width: 6px;
-}
-QScrollBar::handle:vertical {
-	background: #008098;
-	border-radius: 2px;
-	min-height: 10px;
-}
-QScrollBar::add-line:vertical,
-QScrollBar::sub-line:vertical {
-	border: none;
-}
-QScrollBar::add-page:vertical,
-QScrollBar::sub-page:vertical  {
-	background: #383838;
-	margin: 0 2px;
-}
-QScrollBar::up-arrow:vertical,
-QScrollBar::down-arrow:vertical {
-	background: transparent;
-}
-
-QScrollBar:horizontal {
-	height: 6px;
-	padding-top: 1px;
-}
-QScrollBar::handle:horizontal {
-	background: #008098;
-	border-radius: 2px;
-	min-width: 10px;
-}
-QScrollBar::add-line:horizontal,
-QScrollBar::sub-line:horizontal {
-	border: none;
-}
-QScrollBar::add-page:horizontal,
-QScrollBar::sub-page:horizontal {
-	background: #383838;
-	margin: 2px 0;
-}
-QScrollBar::left-arrow:horizontal,
-QScrollBar::right-arrow:horizontal {
-	background: transparent;
-}</string>
-  </property>
   <layout class="QVBoxLayout" name="verticalLayout_12">
    <item>
     <widget class="QTabWidget" name="tabWidget">
-     <property name="styleSheet">
-      <string notr="true">QTabWidget::pane { /* The tab widget frame */
-	border-top: 1px solid #454A4D;
-	padding: 5px 0px;
-}
-
-QTabWidget::tab-bar { alignment: center; }
-
-/* Style the tab using the tab sub-control. Note that
-    it reads QTabBar _not_ QTabWidget */
-QTabBar::tab {
-	border-style: none;
-	padding-bottom: 5px;
-	min-width: 100px;
-}
-QTabBar::tab:selected {
-	border-bottom: 1px solid #008098;
-	font-weight: bold;
-}
-QTabBar::tab:!selected {
-	font-weight: normal;
-	margin-bottom: 1px;
-}</string>
-     </property>
      <property name="currentIndex">
       <number>0</number>
      </property>
@@ -370,11 +145,6 @@ QTabBar::tab:!selected {
                 </item>
                 <item>
                  <widget class="QLabel" name="label_8">
-                  <property name="styleSheet">
-                   <string notr="true">QLabel {
-	font-weight: bold;
-}</string>
-                  </property>
                   <property name="text">
                    <string>Change Volume</string>
                   </property>
@@ -396,11 +166,6 @@ QTabBar::tab:!selected {
                 </item>
                 <item>
                  <widget class="QLabel" name="label_9">
-                  <property name="styleSheet">
-                   <string notr="true">QLabel {
-	font-weight: bold;
-}</string>
-                  </property>
                   <property name="text">
                    <string>Seek Position</string>
                   </property>
@@ -503,11 +268,6 @@ QTabBar::tab:!selected {
        </property>
        <item>
         <widget class="QLabel" name="label_6">
-         <property name="styleSheet">
-          <string notr="true">QLabel {
-	color: #6F6F6F;
-}</string>
-         </property>
          <property name="text">
           <string>Prefix a command with 'mpv' to make it run as an input command.</string>
          </property>
@@ -518,24 +278,6 @@ QTabBar::tab:!selected {
        </item>
        <item>
         <widget class="QTableWidget" name="infoWidget">
-         <property name="styleSheet">
-          <string notr="true">/* QHeaderView set under main stylesheet (QDialog) */
-
-QTableWidget {
-	border: 1px solid #212121;
-	background: black;
-}
-
-QTableWidget::item {
-	alternate-background-color: #141414;
-}
-QTableWidget::item:alternate {
-    background: #141414;
-}
-QTableWidget::item:selected {
-	background: #008098;
-}</string>
-         </property>
          <property name="editTriggers">
           <set>QAbstractItemView::NoEditTriggers</set>
          </property>
@@ -596,11 +338,6 @@ QTableWidget::item:selected {
         <layout class="QHBoxLayout" name="horizontalLayout_4">
          <item>
           <widget class="QPushButton" name="addKeyButton">
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-    min-width: 40px;
-}</string>
-           </property>
            <property name="icon">
             <iconset resource="../rsclist.qrc">
              <normaloff>:/img/add.svg</normaloff>:/img/add.svg</iconset>
@@ -612,11 +349,6 @@ QTableWidget::item:selected {
            <property name="enabled">
             <bool>false</bool>
            </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-    min-width: 40px;
-}</string>
-           </property>
            <property name="icon">
             <iconset resource="../rsclist.qrc">
              <normaloff>:/img/remove.svg</normaloff>:/img/remove.svg</iconset>
@@ -627,11 +359,6 @@ QTableWidget::item:selected {
           <widget class="QPushButton" name="editKeyButton">
            <property name="enabled">
             <bool>false</bool>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-    min-width: 40px;
-}</string>
            </property>
            <property name="icon">
             <iconset resource="../rsclist.qrc">
@@ -654,20 +381,6 @@ QTableWidget::item:selected {
          </item>
          <item>
           <widget class="QPushButton" name="resetKeyButton">
-           <property name="styleSheet">
-            <string notr="true">/* resetKeyButton */
-
-QPushButton {
-	background: #A51051;
-	border: 1px solid #A51051;
-}
-QPushButton:focus {
-	border: 1px solid #008098;
-}
-QPushButton:pressed {
-	background: #650A32;
-}</string>
-           </property>
            <property name="text">
             <string>Rese&amp;t All</string>
            </property>

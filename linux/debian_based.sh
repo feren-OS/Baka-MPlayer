@@ -1,5 +1,7 @@
 #!/bin/sh
 
+ogdir=$(pwd)
+
 JOBS=4
 
 # for debian-based systems (debian, linux mint, ubuntu)
@@ -20,7 +22,7 @@ sudo dpkg -i ../mpv*.deb
 cd ..
 
 # build baka-mplayer
-git clone https://github.com/u8sand/Baka-MPlayer.git
+cp -Rf "$ogdir/.." Baka-MPlayer
 cd Baka-MPlayer
 QMAKE=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake ./configure CONFIG+=install_translations
 make -j${JOBS}
